@@ -47,20 +47,6 @@ jobs:
           sudo apt install megatools
           cd /home/runner && curl -sL https://git.io/file-transfer | sh
   
-     - name: Setup Rclone
-       run: |
-             git clone https://github.com/nnippon/rclone
-             mkdir -p /home/runner/.config/rclone
-             mv rclone/rclone.conf /home/runner/.config/rclone
-             rm -rf rclone
-             mkdir /home/runner/drive
-             rclone mount --daemon gdrive:/ /home/runner/drive
-
-     - name: Install ErfanGSIs Requirements
-       run: |
-          git clone --recurse-submodules http://github.com/nnippon/gsitools /home/runner/ErfanGSIs
-          bash /home/runner/ErfanGSIs/setup.sh
-
      - name: Clone botgram shell-bot repo and Generate config
        run: |
           git clone https://github.com/nnippon/shell-bot --depth=1 shell-bot
