@@ -45,7 +45,7 @@ jobs:
      - name: Adding mirror bot
        run: |
           sudo apt update
-          git clone https://github.com/anirbanpolvolt/mirror_bot.git
+          cd /home/runner && git clone https://github.com/anirbanpolvolt/mirror_bot.git
           
      - name: utils
        run: |
